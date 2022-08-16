@@ -10,11 +10,11 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    'pytest'
+    'pytest >= 7.0'
 ]
 
 [tool.pytest.ini_options]
-minversion = '6.0'
+# minversion = '7.0'
 addopts = '--durations=10'
 testpaths = [
     'tests',
