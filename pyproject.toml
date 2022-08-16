@@ -1,29 +1,12 @@
-[build-system]
-requires = ['hatchling']
-build-backend = 'hatchling.build'
-
 [project]
 name = 'pdquery'
 version = '0.0.1'
-authors = [
-  { name='AJ Friend', email='ajfriend@gmail.com' },
-]
-description = 'todo'
-readme = 'readme.md'
-requires-python = '>=3.7'
-classifiers = [
-    'Programming Language :: Python :: 3',
-    'Operating System :: OS Independent',
-]
 
 dependencies = [
   'pandas >= 1.0',
   'duckdb',
   'prql-python',
 ]
-
-[project.urls]
-'Homepage' = 'todo'
 
 [project.optional-dependencies]
 dev = [
@@ -36,3 +19,9 @@ addopts = '--durations=10'
 testpaths = [
     'tests',
 ]
+
+# hatchling is kind of nice because it avoids leaving around all
+# that .egg_info baloney
+[build-system]
+requires = ['hatchling']
+build-backend = 'hatchling.build'
