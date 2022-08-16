@@ -1,11 +1,11 @@
 [project]
-name = 'pdquery'
+name = 'pdq'
 version = '0.0.1'
 
 dependencies = [
   'pandas >= 1.0',
-  'duckdb',
-  'prql-python',
+  'duckdb >= 0.4',
+  'prql-python >= 0.2',
 ]
 
 [project.optional-dependencies]
@@ -25,3 +25,5 @@ testpaths = [
 [build-system]
 requires = ['hatchling']
 build-backend = 'hatchling.build'
+
+
