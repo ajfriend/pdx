@@ -3,7 +3,6 @@ import prql_python as prql
 
 def dquery(
     query_string,
-    _single_row_as_dict_=True,
     **dfs_for_query,
 ):
     con = duckdb.connect(database=':memory:')
@@ -11,9 +10,6 @@ def dquery(
         con.register(tbl_name, df)
 
     out = con.execute(query_string).df()
-
-    if _single_row_as_dict_ and len(out) == 1:
-        out = dict(out.iloc[0])
 
     return out
 

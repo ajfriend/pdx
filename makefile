@@ -13,6 +13,10 @@ clear:
 	-@find . -type d -name '*.ipynb_checkpoints' | xargs rm -r
 	-@find ./tests -type f -name '*.c' | xargs rm -r
 
+reinstall:
+	make clear
+	env/bin/pip install -e .[dev]
+
 purge:
 	-@rm -rf env
 	make clear
