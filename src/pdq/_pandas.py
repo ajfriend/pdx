@@ -1,6 +1,6 @@
 from pandas.core.base import PandasObject
 
-from .query import dquery, pqrl_to_sql
+from ._query import query, pqrl_to_sql
 
 def _sql(df, s=None, tbl_name='tbl'):
     """ Run a SQL query against Pandas DataFrame.
@@ -18,7 +18,7 @@ def _sql(df, s=None, tbl_name='tbl'):
 
     tables = {tbl_name: df}
 
-    return dquery(s, **tables)
+    return query(s, **tables)
 
 def _prql(df, s='', tbl_name='tbl', show_queries=False):
     s = f'from {tbl_name}\n' + s
