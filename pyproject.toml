@@ -1,15 +1,15 @@
 [project]
 name = 'pdq'
 version = '0.0.1'
-description = "Helper functions to run SQL on Pandas DataFrames"
+description = 'Helper functions to run SQL on Pandas DataFrames'
 authors = [
-    {name = "AJ Friend", email="ajfriend@gmail.com"},
+    {name = 'AJ Friend", email="ajfriend@gmail.com'},
 ]
-readme = "readme.md"
-requires-python = ">=3.6"
+readme = 'readme.md'
+requires-python = '>=3.6'
 
 [project.urls]
-homepage = "https://github.com/ajfriend/pdq"
+homepage = 'https://github.com/ajfriend/pdq'
 
 dependencies = [
   'pandas >= 1.0',
