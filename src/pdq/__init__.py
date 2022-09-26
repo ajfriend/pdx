@@ -1,5 +1,7 @@
 from ._query import (
-    query,
+    sql,
+    prql,
+    pqrl_to_sql,
 )
 
 from . import _pandas
