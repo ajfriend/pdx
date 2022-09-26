@@ -8,14 +8,14 @@ authors = [
 readme = 'readme.md'
 requires-python = '>=3.6'
 
-[project.urls]
-homepage = 'https://github.com/ajfriend/pdq'
-
 dependencies = [
   'pandas >= 1.0',
   'duckdb >= 0.5',
   'prql-python >= 0.2',
 ]
+
+[project.urls]
+homepage = 'https://github.com/ajfriend/pdq'
 
 [project.optional-dependencies]
 dev = [
