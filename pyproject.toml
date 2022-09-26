@@ -1,5 +1,5 @@
 [project]
-name = 'pdq'
+name = 'pdx'
 version = '0.0.1'
 description = 'Helper functions to run SQL on Pandas DataFrames'
 authors = [
@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = 'https://github.com/ajfriend/pdq'
+homepage = 'https://github.com/ajfriend/pdx'
 
 [project.optional-dependencies]
 dev = [

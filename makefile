@@ -4,7 +4,7 @@ init: purge
 	env/bin/pip install -e .[dev]
 
 clear:
-	-@env/bin/pip uninstall -y pdq
+	-@env/bin/pip uninstall -y pdx
 	-@rm -rf MANIFEST
 	-@rm -rf annotations
 	-@rm -rf .pytest_cache tests/__pycache__ __pycache__ _skbuild dist .coverage
@@ -13,7 +13,7 @@ clear:
 	-@find . -type d -name '*.ipynb_checkpoints' | xargs rm -r
 	-@find ./tests -type f -name '*.c' | xargs rm -r
 
-reinstall:
+rebuild:
 	make clear
 	env/bin/pip install -e .[dev]
 
