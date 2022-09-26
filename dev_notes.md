@@ -1,8 +1,6 @@
 # todo
 
-- add a method to pandas dataframes
-    + `df.sql('...')`
-    + `df.prql('...')`
+https://pandas.pydata.org/docs/development/extending.html#registering-custom-accessors
 
 
 # thoughts
