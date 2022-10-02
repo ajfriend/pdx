@@ -5,3 +5,4 @@ from ._query import (
 )
 
 from . import _pandas
+from . import _data as data

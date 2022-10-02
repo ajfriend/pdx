@@ -1,6 +1,9 @@
 init: purge
 	python -m venv env
 	env/bin/pip install --upgrade pip wheel setuptools
+	make lib
+
+lib:
 	env/bin/pip install -e .[dev]
 
 clear:
@@ -15,7 +18,7 @@ clear:
 
 rebuild:
 	make clear
-	env/bin/pip install -e .[dev]
+	make lib
 
 purge:
 	-@rm -rf env

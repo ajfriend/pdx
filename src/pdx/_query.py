@@ -16,7 +16,9 @@ def pqrl_to_sql(s, show_queries=False):
 
 
 def sql(s, **dfs):
-    con = duckdb.connect(database=':memory:')
+    config = {'enable_external_access': False}
+    con = duckdb.connect(database=':memory:', config=config)
+
     for tbl_name, df in dfs.items():
         con.register(tbl_name, df)
 
