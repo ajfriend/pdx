@@ -93,18 +93,9 @@ def _cols2dict(df):
 
 
 PandasObject.sql = _sql
-PandasObject.pdx_sql = _sql
-
 PandasObject.prql = _prql
-PandasObject.pdx_prql = _prql
 
-PandasObject.as_list = _as_list
 PandasObject.aslist = _as_list
-
-PandasObject.as_dict = _as_dict
 PandasObject.asdict = _as_dict
-
-PandasObject.as_item = _as_item
 PandasObject.asitem = _as_item
-
 PandasObject.cols2dict = _cols2dict
