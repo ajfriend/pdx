@@ -4,7 +4,7 @@
 pip install git+https://github.com/ajfriend/pdx
 ```
 
-- powered by [DuckDB](https://duckdb.org/)
+- powered by [DuckDB](https://duckdb.org/) and [PRQL](https://prql-lang.org/)
 - [Apache Arrow and the "10 Things I Hate About pandas"](https://wesmckinney.com/blog/apache-arrow-pandas-internals/)
 
 Check out the [example notebook folder](notebooks).
