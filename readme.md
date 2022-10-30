@@ -14,3 +14,6 @@ Check out the [example notebook folder](notebooks).
 - `pdx.get_params(query_string)`
 - `df.sql(query_string)`
 - `df.prql(query_string)`
+- duckdb save/load
+  - `pdx.save(filename, df1=df1, df2=df2)`
+  - `pdx.load(filename) -> dict(table_name: dataframe)`
