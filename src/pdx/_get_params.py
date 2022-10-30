@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from jinja2 import Environment, meta
 
 
