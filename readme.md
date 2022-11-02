@@ -17,3 +17,11 @@ Check out the [example notebook folder](notebooks).
 - duckdb save/load
   - `pdx.save(filename, tbl1=df1, tbl2=df2)`
   - `pdx.load(filename) -> dict(table_name: dataframe)`
+
+## For bleeding edge DuckDB
+
+```
+git clone https://github.com/duckdb/duckdb.git
+cd duckdb
+../env/bin/pip install -e tools/pythonpkg --verbose
+```
