@@ -10,3 +10,9 @@ def test_3():
 
 def test_4():
     import pdx
+
+    
+def test_version():
+    import pdx
+    
+    assert pdx.__version__ == '0.3.0'
