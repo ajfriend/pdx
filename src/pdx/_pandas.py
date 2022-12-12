@@ -18,19 +18,50 @@ def _insist_single_row_or_col(df):
 
 
 def _sql(df, s='', tbl_name='tbl'):
-    """ Run a SQL query against Pandas DataFrame.
+    """ Run a DuckDB SQL query against Pandas DataFrame.
 
     DataFrame will be referred to by string given in `tbl_name`.
+    The query starts with a `from {table_name}` clause.
+    Since DuckDB 0.6, the `select` clause is optional, defaulting to `select *`.
 
     Examples
     --------
-    >>> df.sql('select * from tbl')
-    >>> df.sql('select * from new_tbl', tbl_name='new_tbl')
 
+    ```
+    df.sql('select col_a where col_b > 0')
+    ```
+
+    is equivalent to the query
+
+    ```
+    select
+        col_a
+    from
+        tbl
+    where
+        col_b > 0
+    ```
+
+
+    `df.sql('where col_b > 0')` is equivalent to
+
+    ```
+    select
+        *
+    from
+        tbl
+    where
+        col_b > 0
+    ```
+
+    Note that `df.sql()` is equivalent to
+
+    ```
+    select * from tbl
+    ```
     """
-    if not s:
-        s = f'select * from {tbl_name}'
 
+    s = f'from {tbl_name}\n' + s
     tables = {tbl_name: df}
 
     return _query.sql(s, **tables)
