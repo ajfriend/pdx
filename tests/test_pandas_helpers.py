@@ -54,3 +54,18 @@ def test_from_first_prql():
         ==
         approx(6.670491803278686)
     )
+
+
+def test_default_table_name_and_CTE():
+    iris = pdx.data.get_iris()
+
+    out = iris.sql("""
+    with _ as (select 1)
+
+    select
+        count(*)
+    from
+        _df
+    """).asitem()
+
+    assert out == 150

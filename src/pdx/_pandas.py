@@ -1,6 +1,7 @@
 from pandas.core.base import PandasObject
 
 from . import _query
+from ._util import _get_if_file
 
 def _insist_single_row(df):
     if len(df) != 1:
@@ -17,7 +18,7 @@ def _insist_single_row_or_col(df):
         raise ValueError(f'DataFrame should have a single row or column, but has shape f{df.shape}')
 
 
-def _sql(df, s='', tbl_name='tbl'):
+def _sql(df, s='', tbl_name='_df'):
     """ Run a DuckDB SQL query against Pandas DataFrame.
 
     DataFrame will be referred to by string given in `tbl_name`.
@@ -37,7 +38,7 @@ def _sql(df, s='', tbl_name='tbl'):
     select
         col_a
     from
-        tbl
+        _df
     where
         col_b > 0
     ```
@@ -49,7 +50,7 @@ def _sql(df, s='', tbl_name='tbl'):
     select
         *
     from
-        tbl
+        _df
     where
         col_b > 0
     ```
@@ -57,17 +58,24 @@ def _sql(df, s='', tbl_name='tbl'):
     Note that `df.sql()` is equivalent to
 
     ```
-    select * from tbl
+    select * from _df
     ```
     """
 
-    s = f'from {tbl_name}\n' + s
+    s = _get_if_file(s)
+    if not _is_CTE(s):
+        s = f'from {tbl_name}\n' + s
+
     tables = {tbl_name: df}
 
     return _query.sql(s, **tables)
 
+def _is_CTE(s):
+    return s.strip().startswith('with')
 
-def _prql(df, s='', tbl_name='tbl'):
+
+def _prql(df, s='', tbl_name='_df'):
+    s = _get_if_file(s)
     s = f'from {tbl_name}\n' + s
     tables = {tbl_name: df}
 
