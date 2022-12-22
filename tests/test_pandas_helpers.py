@@ -56,7 +56,7 @@ def test_from_first_prql():
     )
 
 
-def test_default_table_name():
+def test_default_table_name_and_CTE():
     iris = pdx.data.get_iris()
 
     out = iris.sql("""

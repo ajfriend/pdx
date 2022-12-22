@@ -3,8 +3,7 @@
 - remove `get_params` (as that's really for external queries that need to work with Jinja)
 - query functions can also take a filename (instead of just a query string)
 - change default table name to `_df`
-
-todo: starts with with
+- handle CTEs correctly for `df.sql()`: avoid prepending `from {table_name}` to the query string
 
 # 0.3.0
 
