@@ -1,6 +1,6 @@
 [project]
 name = 'pdx'
-version = '0.3.0'
+version = '0.4.0'
 description = 'Helper functions to run SQL on Pandas DataFrames'
 authors = [
     {name = 'AJ Friend', email='ajfriend@gmail.com'},
@@ -12,7 +12,6 @@ dependencies = [
   'pandas >= 1.0',
   'duckdb >= 0.6',
   'prql-python >= 0.2',
-  'jinja2',
 ]
 
 [project.urls]

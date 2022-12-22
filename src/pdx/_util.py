@@ -1,4 +1,4 @@
-def get_if_file(s):
+def _get_if_file(s):
     try:
         s = open(s).read()
     except:

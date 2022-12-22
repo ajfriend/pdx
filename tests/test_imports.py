@@ -7,12 +7,10 @@ def test_2():
 def test_3():
     import duckdb
 
-
 def test_4():
     import pdx
 
-    
 def test_version():
     import pdx
     
-    assert pdx.__version__ == '0.3.0'
+    assert pdx.__version__ == '0.4.0'

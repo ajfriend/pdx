@@ -1,3 +1,8 @@
+# 0.4.0
+
+- remove `get_params` (as that's really for external queries that need to work with Jinja)
+- query functions can also take a filename (instead of just a query string)
+
 # 0.3.0
 
 - add `pdx.__version__`

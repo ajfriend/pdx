@@ -1,6 +1,7 @@
 from pandas.core.base import PandasObject
 
 from . import _query
+from ._util import _get_if_file
 
 def _insist_single_row(df):
     if len(df) != 1:
@@ -61,6 +62,7 @@ def _sql(df, s='', tbl_name='tbl'):
     ```
     """
 
+    s = _get_if_file(s)
     s = f'from {tbl_name}\n' + s
     tables = {tbl_name: df}
 
@@ -68,6 +70,7 @@ def _sql(df, s='', tbl_name='tbl'):
 
 
 def _prql(df, s='', tbl_name='tbl'):
+    s = _get_if_file(s)
     s = f'from {tbl_name}\n' + s
     tables = {tbl_name: df}
 

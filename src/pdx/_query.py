@@ -1,6 +1,8 @@
 import duckdb
 import prql_python as _prql
 
+from ._util import _get_if_file
+
 
 def pqrl_to_sql(s, show_queries=False):
     if show_queries:
@@ -22,15 +24,16 @@ def sql(s, **dfs):
     for tbl_name, df in dfs.items():
         con.register(tbl_name, df)
 
+    s = _get_if_file(s)
     out = con.execute(s).df()
 
     return out
 
 def prql(s, **dfs):
+    s = _get_if_file(s)
     s = pqrl_to_sql(s) # todo: show queries? maybe a logging option?
 
     return sql(s, **dfs)
-
 
 
 # todo: can we do some fancier thing to specify the dicts?
