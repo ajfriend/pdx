@@ -5,7 +5,12 @@ from ._query import (
 )
 
 from . import _pandas # triggers pandas monkeypatching
-from . import _data as data
+
+try:
+    from . import _data as data
+except:
+    pass
+    
 from ._io import save, load
 
 import importlib.metadata
